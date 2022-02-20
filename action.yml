@@ -1,0 +1,16 @@
+name: "Bump version with bump2version"
+description: "Bump version with bump2version"
+author: "Epsy Engineering <engieering@epsyhealth.com>"
+
+outputs:
+  old_ver:
+    description: Old version
+  new_ver:
+    description: New version
+  part:
+    description: Bumped part
+
+
+runs:
+  using: "docker"
+  image: "docker://epsyhealth/action-bumpversion"
