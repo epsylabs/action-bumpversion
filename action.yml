@@ -2,6 +2,11 @@ name: "Bump version with bump2version"
 description: "Bump version with bump2version"
 author: "Epsy Engineering <engieering@epsyhealth.com>"
 
+inputs:
+  part:
+    description: Bump specific part
+    required: false
+
 outputs:
   old_ver:
     description: Old version
