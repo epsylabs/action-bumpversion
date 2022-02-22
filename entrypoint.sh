@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 
+set -ex
+
 part=${DEFAULT_BUMP:-patch}
 
 
 /app/bin/bump2version "$part" --verbose
 
-raw_output=$(bump2version --list "$part" --dry-run)
+raw_output=$(/app/bin/bump2version --list "$part" --dry-run)
 
 old_version=$(echo "$raw_output" | grep -o 'current_version=\S*' | cut -d= -f2)
 new_version=$(echo "$raw_output" | grep -o 'new_version=\S*' | cut -d= -f2)
