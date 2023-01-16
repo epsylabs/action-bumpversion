@@ -12,9 +12,9 @@ new_version=$(echo "$raw_output" | grep -o 'new_version=\S*' | cut -d= -f2)
 
 /app/bin/bump2version "$part" --verbose
 
-echo ::set-output name=old_ver::"$old_version"
-echo ::set-output name=new_ver::"$new_version"
-echo ::set-output name=part::"$part"
+echo old_ver="$old_version" >> $GITHUB_ENV
+echo new_ver="$new_version" >> $GITHUB_ENV
+echo part="$part" >> $GITHUB_ENV
 
 echo "Semantic Version Part to Bump: $part"
 echo "Current Version: $old_version"
